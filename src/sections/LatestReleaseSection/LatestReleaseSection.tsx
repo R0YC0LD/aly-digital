@@ -46,7 +46,15 @@ export function LatestReleaseSection({ loading, error, data }: Props) {
         ) : null}
 
         {!loading && !error && !latest ? (
-          <p className="muted">Henüz doğrulanmış bir birincil yayın bulunamadı.</p>
+          <div className={styles.skeleton}>
+            <p className="muted" style={{ margin: 0 }}>
+              Katalog henüz senkronize edilmedi. Spotify kimlik bilgileri eklendikten
+              sonra yayınlar burada görünecek.
+            </p>
+            <a className="btn btn-spotify" href={SPOTIFY_ARTIST_URL} target="_blank" rel="noopener noreferrer">
+              Şimdilik Spotify&apos;da dinle
+            </a>
+          </div>
         ) : null}
 
         {!loading && !error && latest ? (
