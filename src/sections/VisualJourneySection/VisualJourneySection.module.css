@@ -1,6 +1,6 @@
 .pinWrap {
   position: relative;
-  height: 520vh;
+  height: 620vh;
   overflow: clip;
 }
 
@@ -77,6 +77,22 @@
   object-fit: cover;
 }
 
+.image[data-treatment="cool"] {
+  filter: contrast(1.08) saturate(0.85) hue-rotate(12deg);
+}
+
+.image[data-treatment="warm"] {
+  filter: contrast(1.05) sepia(0.18) saturate(1.05);
+}
+
+.image[data-treatment="grain"] {
+  filter: contrast(1.15) grayscale(0.35);
+}
+
+.image[data-treatment="lift"] {
+  filter: contrast(1.12) brightness(1.06);
+}
+
 .placeholder {
   width: 100%;
   height: 100%;
@@ -102,7 +118,7 @@
 
 @media (max-width: 900px) {
   .pinWrap {
-    height: 360vh;
+    height: 420vh;
   }
 
   .frame {

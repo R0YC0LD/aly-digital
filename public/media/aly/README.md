@@ -1,27 +1,29 @@
 # ALY promo görselleri
 
-Bu klasördeki görseller **yalnızca** sitedeki sağ/sol visual journey ve hero profil alanı içindir.
+Bu klasördeki görseller **yalnızca** sitedeki hero, manifesto, visual journey ve final alanları içindir.
 
 Spotify albüm kapaklarını buraya kopyalamayın.
 
-## Mevcut dosyalar
+## Kaynaklar
 
-| Dosya | Kullanım |
-|-------|----------|
-| `aly-01.jpg` … `aly-07.jpg` | Visual journey sahneleri |
-| `aly-08.webp` | Visual journey / profil |
-| `aly-profile.webp` | Hero profil görseli |
+Kullanıcının sağladığı orijinal dosyalar:
 
-## Önerilen isimler (WebP tercih edilir)
-
-- `aly-01.webp`
-- `aly-02.webp`
-- `aly-03.webp`
-- `aly-04.webp`
-- `aly-05.webp`
-- `aly-06.webp`
-- `aly-07.webp`
-- `aly-08.webp`
+- `aly-01.jpg`
+- `aly-02.jpg`
+- `aly-03.jpg`
 - `aly-profile.webp`
 
-Görsel yoksa site tipografik placeholder gösterir; başka sanatçı fotoğrafı veya sahte portre kullanılmaz.
+Bunlardan türetilen WebP varyantları (`npm run prepare:media`):
+
+- `aly-01.webp` … `aly-08.webp`
+- `aly-05-tone.webp`
+- `aly-hero.webp`
+
+Varyantlar yalnızca crop / resize / ton işlemidir; sahte portre üretilmez.
+
+## Instagram
+
+Resmî hesap: https://www.instagram.com/alykilla/
+
+Instagram login duvarı nedeniyle post görselleri otomatik indirilemiyor.
+Yeni kare eklemek için dosyayı buraya koyup `npm run prepare:media` çalıştırın.

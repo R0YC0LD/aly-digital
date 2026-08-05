@@ -18,7 +18,7 @@ export const socialLinks: SocialLink[] = [
   {
     id: "instagram",
     label: "Instagram",
-    url: "",
+    url: "https://www.instagram.com/alykilla/",
   },
   {
     id: "youtube",

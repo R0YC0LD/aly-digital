@@ -144,6 +144,11 @@ describe("preview and social rules", () => {
     expect(empty.length).toBeGreaterThan(0);
     const visible = getVisibleSocialLinks();
     expect(visible.every((l) => Boolean(l.url.trim()))).toBe(true);
-    expect(visible.find((l) => l.id === "instagram")).toBeUndefined();
+    expect(visible.find((l) => l.id === "youtube")).toBeUndefined();
+  });
+
+  it("shows Instagram when configured", () => {
+    const visible = getVisibleSocialLinks();
+    expect(visible.find((l) => l.id === "instagram")?.url).toContain("alykilla");
   });
 });

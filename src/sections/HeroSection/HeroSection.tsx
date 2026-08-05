@@ -1,13 +1,22 @@
-import { ArrowDown, ExternalLink } from "lucide-react";
+import { ArrowDown, ExternalLink, Instagram } from "lucide-react";
 import { SPOTIFY_ARTIST_URL } from "@/config/artist";
-import { HERO_PROFILE_SRC, promoSrc } from "@/utils/media";
+import { HERO_BG_SRC, HERO_PROFILE_SRC, INSTAGRAM_URL, promoSrc } from "@/utils/media";
 import styles from "./HeroSection.module.css";
 
 export function HeroSection() {
   return (
     <section id="top" className={styles.hero} aria-labelledby="hero-title">
+      <img
+        className={styles.bg}
+        src={promoSrc(HERO_BG_SRC)}
+        alt=""
+        width={1920}
+        height={1080}
+        decoding="async"
+        fetchPriority="high"
+      />
+      <div className={styles.veil} aria-hidden />
       <div className={styles.grid} aria-hidden />
-      <div className={styles.glow} aria-hidden />
       <img
         className={styles.profile}
         src={promoSrc(HERO_PROFILE_SRC)}
@@ -15,7 +24,6 @@ export function HeroSection() {
         width={800}
         height={800}
         decoding="async"
-        fetchPriority="high"
       />
 
       <div className={styles.content}>
@@ -37,8 +45,17 @@ export function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Spotify profili
+            Spotify
             <ExternalLink size={16} aria-hidden />
+          </a>
+          <a
+            className="btn"
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram size={16} aria-hidden />
+            Instagram
           </a>
         </div>
         <div className={styles.scrollHint} aria-hidden>

@@ -12,7 +12,9 @@ const COPY_BEATS = [
   { title: "ALY", subtitle: "SES / GÖLGE / HAREKET" },
   { title: "FREKANS", subtitle: "KATMANLAR AÇILIYOR" },
   { title: "GÖLGE", subtitle: "IŞIK KESİŞİMİ" },
+  { title: "YAKIN", subtitle: "KAREDEN TAŞAN AN" },
   { title: "RİTİM", subtitle: "DİSKOGRAFİYE GİR" },
+  { title: "IZ", subtitle: "@ALYKILLA" },
   { title: "ARŞİV", subtitle: "YENİ YAYINLAR" },
   { title: "ALY", subtitle: "DEVAM ET" },
 ];
@@ -147,6 +149,7 @@ export function VisualJourneySection() {
                     height={asset.height}
                     loading="lazy"
                     decoding="async"
+                    data-treatment={asset.treatment ?? "raw"}
                     onError={() => {
                       setAvailable((prev) => ({ ...prev, [asset.id]: false }));
                     }}
