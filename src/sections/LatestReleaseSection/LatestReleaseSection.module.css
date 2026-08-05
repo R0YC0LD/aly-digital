@@ -1,0 +1,75 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  letter-spacing: 0.04em;
+}
+
+.meta {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.tracks {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 44px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.55rem 0;
+}
+
+.skeleton {
+  display: grid;
+  gap: 1rem;
+}
+
+.skelBlock {
+  height: 280px;
+  background: linear-gradient(90deg, #141414, #1c1c1c, #141414);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border: 1px solid var(--line);
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skelBlock {
+    animation: none;
+  }
+}

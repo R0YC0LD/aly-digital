@@ -1,0 +1,36 @@
+.section {
+  position: relative;
+  padding: clamp(5rem, 12vh, 8rem) 0;
+  overflow: clip;
+}
+
+.inner {
+  width: min(100% - (var(--pad) * 2), var(--max));
+  margin-inline: auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.headline {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+}
+
+.copy {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.aside {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.18em;
+  color: rgba(242, 239, 232, 0.55);
+}

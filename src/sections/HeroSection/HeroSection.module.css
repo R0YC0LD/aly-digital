@@ -1,0 +1,103 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  padding: calc(var(--header-h) + 2rem) 0 3rem;
+  overflow: clip;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 30%, black 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.glow {
+  position: absolute;
+  width: 55vw;
+  height: 55vw;
+  max-width: 680px;
+  max-height: 680px;
+  left: 50%;
+  top: 18%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(113, 104, 255, 0.28), transparent 65%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.profile {
+  position: absolute;
+  right: max(4vw, 1rem);
+  top: 22%;
+  width: min(28vw, 320px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: min(100% - (var(--pad) * 2), var(--max));
+  margin-inline: auto;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(5.5rem, 24vw, 18rem);
+  letter-spacing: 0.04em;
+  line-height: 0.82;
+}
+
+.lead {
+  margin: 1rem 0 0;
+  max-width: 28rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.scrollHint {
+  margin-top: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.scrollHint span {
+  width: 1px;
+  height: 2.5rem;
+  background: linear-gradient(180deg, var(--accent-secondary), transparent);
+}
+
+@media (max-width: 720px) {
+  .profile {
+    width: min(42vw, 160px);
+    top: 18%;
+    opacity: 0.55;
+  }
+
+  .title {
+    font-size: clamp(4.8rem, 28vw, 8rem);
+  }
+}

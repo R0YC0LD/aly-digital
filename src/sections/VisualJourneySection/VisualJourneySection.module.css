@@ -1,0 +1,151 @@
+.pinWrap {
+  position: relative;
+  height: 520vh;
+  overflow: clip;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: clip;
+  display: grid;
+  place-items: center;
+}
+
+.copy {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 var(--pad);
+  pointer-events: none;
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 7rem);
+  letter-spacing: 0.06em;
+  line-height: 0.9;
+}
+
+.subtitle {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  width: min(42vw, 460px);
+  aspect-ratio: 3 / 4;
+  transform: translateY(-50%);
+  will-change: transform, opacity;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: clip;
+}
+
+.frame[data-side="left"] {
+  left: 6vw;
+}
+
+.frame[data-side="right"] {
+  right: 6vw;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 0.1em;
+  background:
+    linear-gradient(145deg, rgba(113, 104, 255, 0.28), transparent 50%),
+    linear-gradient(320deg, rgba(50, 213, 255, 0.18), transparent 45%),
+    #141414;
+}
+
+.cta {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+  .pinWrap {
+    height: 360vh;
+  }
+
+  .frame {
+    width: min(78vw, 360px);
+  }
+
+  .frame[data-side="left"],
+  .frame[data-side="right"] {
+    left: 50%;
+    right: auto;
+    margin-left: calc(min(78vw, 360px) / -2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pinWrap {
+    height: auto;
+    padding: 4rem 0;
+  }
+
+  .sticky {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+    gap: 2rem;
+  }
+
+  .stage {
+    position: relative;
+    display: grid;
+    gap: 1.25rem;
+    padding: 1rem var(--pad) 4rem;
+    justify-items: center;
+  }
+
+  .frame {
+    position: relative;
+    top: auto;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    width: min(78vw, 360px);
+  }
+}
