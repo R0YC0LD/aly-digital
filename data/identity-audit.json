@@ -1,0 +1,18 @@
+{
+  "artistName": "ALY",
+  "targetArtistId": "2pwxA6FXPCRje8le8719pQ",
+  "spotifyUrl": "https://open.spotify.com/intl-tr/artist/2pwxA6FXPCRje8le8719pQ",
+  "auditedAt": "2026-08-06T00:00:00.000Z",
+  "instagram": {
+    "candidate": "alykilla",
+    "candidateUrl": "https://www.instagram.com/alykilla/",
+    "status": "unverified",
+    "setInSiteConfig": false,
+    "reason": "Left null until Spotify external_urls / official Instagram Graph API sync confirms ownership. No live Spotify credentials available during audit.",
+    "signals": []
+  },
+  "notes": [
+    "Prefer links.instagram = null until verify-instagram / sync-instagram confirms.",
+    "Visual journey uses local public/media/aly assets as fallback."
+  ]
+}

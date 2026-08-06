@@ -1,0 +1,9 @@
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(124, 105, 255, 0.05), transparent 18%, transparent 82%, rgba(58, 215, 255, 0.05));
+  opacity: 0.85;
+}

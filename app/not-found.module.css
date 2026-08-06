@@ -1,0 +1,18 @@
+.page {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.code {
+  letter-spacing: 0.3em;
+  color: var(--danger);
+}
+
+.title {
+  font-size: clamp(2.4rem, 10vw, 4.5rem);
+}

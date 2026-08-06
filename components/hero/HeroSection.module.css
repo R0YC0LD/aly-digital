@@ -1,0 +1,74 @@
+.section {
+  position: relative;
+  min-height: 110svh;
+}
+
+.backdrop {
+  background: radial-gradient(ellipse at 72% 40%, rgba(28, 28, 28, 0.58), transparent 42%);
+}
+
+.axis {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: var(--fall-x, 68vw);
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.12), transparent);
+  transform: translateX(-50%);
+}
+
+.content {
+  width: min(100%, 58%);
+  padding: calc(var(--header-h) + 4rem) clamp(1.25rem, 4vw, 3rem) 5rem;
+  display: grid;
+  align-content: center;
+  min-height: 110svh;
+}
+
+.title {
+  font-size: clamp(4rem, 13vw, 9rem);
+  margin: 0.85rem 0 1.25rem;
+}
+
+.lines {
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  max-width: 18ch;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.cta {
+  width: fit-content;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  border-bottom: 1px solid rgba(238, 233, 223, 0.4);
+  padding-bottom: 0.2rem;
+}
+
+.cue {
+  margin-top: 3.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.cueLine {
+  width: 1px;
+  height: 42px;
+  background: linear-gradient(to bottom, var(--text), transparent);
+}
+
+@media (max-width: 899px) {
+  .content {
+    width: min(100%, 70%);
+    min-height: 100svh;
+  }
+
+  .title {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+}

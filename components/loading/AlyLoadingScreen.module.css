@@ -1,0 +1,108 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.shutter {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  pointer-events: none;
+}
+
+.blade {
+  background: linear-gradient(
+    180deg,
+    rgba(124, 105, 255, 0.18),
+    rgba(5, 5, 8, 0.96) 45%,
+    rgba(58, 215, 255, 0.12)
+  );
+  transform-origin: top center;
+  animation: shutterOpen 1.2s var(--ease) forwards;
+}
+
+.blade:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.blade:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.blade:nth-child(4) {
+  animation-delay: 0.18s;
+}
+
+.wordmark {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(4.5rem, 18vw, 9rem);
+  letter-spacing: 0.08em;
+  background: linear-gradient(120deg, var(--accent), var(--accent-soft), var(--accent-warm));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: markIn 0.7s var(--ease) both;
+}
+
+.meta {
+  position: absolute;
+  bottom: clamp(2rem, 6vh, 3.5rem);
+  z-index: 2;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  color: var(--text-muted);
+  animation: markIn 0.8s var(--ease) 0.1s both;
+}
+
+.exit {
+  animation: fadeOut 0.42s var(--ease) forwards;
+}
+
+@keyframes shutterOpen {
+  from {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleY(0);
+    opacity: 0.2;
+  }
+}
+
+@keyframes markIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blade,
+  .wordmark,
+  .meta,
+  .exit {
+    animation: none;
+  }
+
+  .root {
+    transition: opacity 0.2s linear;
+  }
+}

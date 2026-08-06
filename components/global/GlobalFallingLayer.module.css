@@ -1,0 +1,97 @@
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.character {
+  position: absolute;
+  left: var(--fall-x);
+  top: 0;
+  width: var(--fall-size);
+  transform: translate3d(-50%, -64vh, 0) rotate(-3deg);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.audioReactive {
+  position: relative;
+  width: 100%;
+  transform-origin: 50% 48%;
+  transform: scale3d(1, 1, 1);
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+  filter:
+    brightness(var(--audio-brightness, 1))
+    contrast(var(--audio-contrast, 1))
+    drop-shadow(
+      0 0 var(--audio-glow-blur, 0px)
+      rgba(49, 247, 125, var(--audio-glow-opacity, 0))
+    );
+  user-select: none;
+}
+
+.shadow {
+  --shadow-y: -6px;
+  --shadow-blur: 8px;
+  --shadow-opacity: 0.028;
+  --shadow-scale-y: 1.01;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #551014;
+  -webkit-mask-image: var(--fall-mask);
+  mask-image: var(--fall-mask);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  opacity: var(--shadow-opacity);
+  filter: blur(var(--shadow-blur));
+  transform: translate3d(0, var(--shadow-y), 0) scale3d(1, var(--shadow-scale-y), 1);
+  transform-origin: center;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+@media (max-width: 1199px) {
+  .shadow {
+    --shadow-opacity: 0.022;
+  }
+}
+
+@media (max-width: 899px) {
+  .character {
+    opacity: 0.84;
+  }
+
+  .shadow {
+    --shadow-opacity: 0.018;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .character {
+    transform: translate3d(-50%, 12vh, 0) rotate(-3deg) !important;
+    opacity: 0.55;
+  }
+
+  .shadow {
+    opacity: 0 !important;
+  }
+}
+
+[data-chaos="true"] .shadow {
+  --shadow-opacity: 0.04;
+}

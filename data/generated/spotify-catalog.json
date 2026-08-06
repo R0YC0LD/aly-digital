@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 4,
+  "source": "spotify-api",
+  "targetArtistId": "2pwxA6FXPCRje8le8719pQ",
+  "generatedAt": "2026-08-06T00:00:00.000Z",
+  "releases": [],
+  "albums": [],
+  "singles": [],
+  "tracks": [],
+  "latestRelease": null,
+  "counts": {
+    "total": 0,
+    "albums": 0,
+    "singles": 0,
+    "tracks": 0
+  },
+  "updatedAt": null
+}
