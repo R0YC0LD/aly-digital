@@ -1,5 +1,8 @@
+import { TARGET_ARTIST_ID } from "@/data/artist";
+
+export { TARGET_ARTIST_ID, EXPECTED_ARTIST_NAME, SPOTIFY_MARKET } from "@/data/artist";
+
 const isOfficial = false;
-const TARGET_ARTIST_ID = "2pwxA6FXPCRje8le8719pQ";
 
 export const siteConfig = {
   artistName: "ALY",
